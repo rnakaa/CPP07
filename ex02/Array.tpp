@@ -45,6 +45,14 @@ T & Array<T>::operator[](std::size_t indx){
 }
 
 template<typename T>
+const T & Array<T>::operator[](std::size_t indx)const {
+	if(indx > _len){
+		throw std::out_of_range("indx is out of range");
+	}
+	else return (_array[indx]);
+}
+
+template<typename T>
 Array<T>::~Array(){
 	if(_array != NULL)
 		delete [] _array;

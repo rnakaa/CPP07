@@ -10,6 +10,7 @@ class Array {
 		~Array();
 		Array & operator=(const Array & array);
 		T &operator[](std::size_t indx);
+		const T &operator[](std::size_t indx)const ;
 		std::size_t size()const;
 
 

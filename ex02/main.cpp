@@ -49,6 +49,13 @@ int main(){
 		std::cout << YELLOW << "array2[4] = b" << RESET << std::endl;
 		std::cout << "array1[4]= " << array1[4] << "\narray2[4]= " << array2[4] << std::endl;
 	}
+
+	std::cout << std::endl << "char" << std::endl;
+	{
+		const Array<char> array2(20);
+		//array2[4] = 'a';
+		std::cout << array2[0] << std::endl;
+	}
 }
 
 //__attribute__((destructor))
