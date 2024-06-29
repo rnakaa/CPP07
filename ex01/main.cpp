@@ -2,26 +2,36 @@
 #include <iostream>
 #include <stdio.h>
 
-void printInt(int i){
+void printInt(int & i){
 	std::cout << i << std::endl;
 }
 
-void printChr(char c){
+void printChr(char & c){
 	std::cout << c << std::endl;
 }
 
-void printStr(std::string str){
+void printStr(std::string & str){
 	std::cout << str << std::endl;
 }
 
-void printDbl(double d){
+void printDbl(double & d){
 	std::cout << d << std::endl;
+}
+
+void addOneInt(int & i){
+	i++;
 }
 
 int main(){
 	std::cout << std::endl << "array[] = {1,2,3,4,5}"<< std::endl;
 	{
 		int array[] = {1,2,3,4,5};
+		::iter(array, 5, printInt);
+	}
+	std::cout << std::endl << "array[] = {1,2,3,4,5}"<< std::endl;
+	{
+		int array[] = {1,2,3,4,5};
+		::iter(array, 5, addOneInt);
 		::iter(array, 5, printInt);
 	}
 	std::cout << std::endl << "array[] = \"abcde\""<< std::endl;
